@@ -1,10 +1,12 @@
 import type { Root } from 'mdast';
-import type { StaticNotebook } from '@jupyterlab/notebook';
+import type { MarkdownCell } from '@jupyterlab/cells';
+import { AttachmentsResolver } from '@jupyterlab/attachments';
 import type { Image } from 'myst-spec';
 import { selectAll } from 'unist-util-select';
+import { StaticNotebook } from '@jupyterlab/notebook';
 
 type Options = {
-  parent: StaticNotebook;
+  cell: MarkdownCell;
 };
 
 export async function imageUrlSourceTransform(
@@ -15,16 +17,14 @@ export async function imageUrlSourceTransform(
   await Promise.all(
     images.map(async image => {
       if (!image || !image.url) return;
-      // TODO: not sure why, but the cell seems to have a private _rendermime?
-      // How else to get `attachment:` to work?
-      const rendermime =
-        opts.parent.rendermime ??
-        (opts.parent as any)._rendermime ??
-        (opts.parent.parent as any).rendermime;
-      if (!rendermime) return;
-      const path = await rendermime.resolver?.resolveUrl(image.url);
+      const parent = (opts.cell.parent as StaticNotebook).rendermime?.resolver;
+      const resolver = new AttachmentsResolver({
+        parent: parent ?? undefined,
+        model: opts.cell.model.attachments
+      });
+      const path = await resolver.resolveUrl(image.url);
       if (!path) return;
-      const url = await rendermime.resolver?.getDownloadUrl(path);
+      const url = await resolver.getDownloadUrl(path);
       if (!url) return;
       image.url = url;
     })

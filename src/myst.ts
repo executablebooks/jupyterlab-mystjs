@@ -102,10 +102,7 @@ export function parseContent(notebook: StaticNotebook): void {
   cells.forEach(async (cell, index) => {
     try {
       // Go through all links and replace the source if they are local
-      await imageUrlSourceTransform(mdast.children[index] as any, {
-        // We must use the cell here rather than the notebook to get the attachments working.
-        parent: cell as any
-      });
+      await imageUrlSourceTransform(mdast.children[index] as any, { cell });
     } catch (error) {
       // pass
     }
