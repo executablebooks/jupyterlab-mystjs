@@ -105,7 +105,8 @@
   },
   "jupyterlab": {
     "extension": true,
-    "outputDir": "jupyterlab_mystjs/labextension"
+    "outputDir": "jupyterlab_mystjs/labextension",
+    "disabledExtensions": ["@jupyterlab/notebook-extension:factory"]
   },
   "jupyter-releaser": {
     "hooks": {
