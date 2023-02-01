@@ -18,7 +18,7 @@ const plugin: JupyterFrontEndPlugin<NotebookPanel.IContentFactory> = {
   autoStart: true,
   activate: (app: JupyterFrontEnd, editorServices: IEditorServices) => {
     const editorFactory = editorServices.factoryService.newInlineEditor;
-    console.log("Activated MyST content factory");
+    console.log('Activated MyST content factory');
     return new MySTContentFactory({ editorFactory });
   }
 };
