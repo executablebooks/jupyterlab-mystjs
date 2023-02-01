@@ -69,7 +69,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     const factory = new NotebookWidgetFactory({
       name: 'Jupyter MyST Notebook',
       // label: trans.__("Jupyter MyST Notebook"), // will be needed in JupyterLab 4
-      fileTypes: ['notebook'],
+      fileTypes: ['notebook', 'markdown', 'myst'],
       defaultFor: ['notebook'],
       modelName: notebookFactory.modelName ?? 'notebook',
       preferKernel: notebookFactory.preferKernel ?? true,
