@@ -7534,6 +7534,27 @@ myst-config@^0.0.7:
     myst-frontmatter "^0.0.6"
     simple-validators "^0.0.3"
 
+myst-ext-card@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/myst-ext-card/-/myst-ext-card-0.0.1.tgz#2c538917bb741cc24aba513b710df889710bba88"
+  integrity sha512-cYM83yRPb4j1942JLaK3EPTbIUQ1J96kCs2PscwxF0w4+Myavhixyjb8mAyt8NgJd/mu+2kJbVhFkrzWeVA3Hg==
+  dependencies:
+    mystjs "^0.0.15"
+
+myst-ext-grid@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/myst-ext-grid/-/myst-ext-grid-0.0.1.tgz#1706460977541d9c64c9e02f3cc705868fb3f6ff"
+  integrity sha512-Iy1L0JyGo2GNenjaR0TeMJqF2gXA0AAoguMeVke+sdaWcA3D8DYtB8Kw1TPzY2nwjlI6hJ53Li4uKbQjxaz4Vg==
+  dependencies:
+    mystjs "^0.0.15"
+
+myst-ext-tabs@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/myst-ext-tabs/-/myst-ext-tabs-0.0.1.tgz#c2b0674f6e9a68e07b7bd9213657ff6bf6e65cc6"
+  integrity sha512-bVDaLP+BTwBrqIYi8Rxmbcj3LYqX2BIp3yZju8t/0v13jLXHWeYA9AIkJ2yZZ8ZfYjOmN2zyjEI9WDzzuNjgVg==
+  dependencies:
+    mystjs "^0.0.15"
+
 myst-frontmatter@*:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/myst-frontmatter/-/myst-frontmatter-0.0.5.tgz#feef99272aa18284a51ed86833009cd874d90d65"
