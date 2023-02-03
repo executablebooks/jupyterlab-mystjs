@@ -4,7 +4,7 @@
 
 Render markdown cells using [MyST Markdown](https://myst-tools.org/)
 
-![](/images/walkthrough.gif)
+![](./images/walkthrough.gif)
 
 ## Requirements
 
