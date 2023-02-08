@@ -21,6 +21,7 @@ pip install jupyterlab_mystjs
 ## Usage
 
 By default, the MyST renderer becomes the default notebook renderer. This means that MyST notebook rendering works out-of-the-box with Jupytext and other notebook-aware extensions. Whilst this extension is in a pre-release state, there is also a "legacy mode" that integrates MyST rendering as an additional `Open With` option that does not replace the default notebook renderer. To enable legacy mode, disable the `jupyterlab-mystjs:plugin` plugin with
+
 ```bash
 jupyter labextension disable jupyterlab-mystjs:plugin
 ```
