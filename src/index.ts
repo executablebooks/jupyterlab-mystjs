@@ -1,15 +1,23 @@
-import {JupyterFrontEnd, JupyterFrontEndPlugin} from '@jupyterlab/application';
+import {
+  JupyterFrontEnd,
+  JupyterFrontEndPlugin
+} from '@jupyterlab/application';
 
-import {IEditorServices} from '@jupyterlab/codeeditor';
+import { IEditorServices } from '@jupyterlab/codeeditor';
 
-import {INotebookTracker, INotebookWidgetFactory, NotebookPanel, NotebookWidgetFactory} from '@jupyterlab/notebook';
-import {MySTContentFactory} from './MySTContentFactory';
+import {
+  INotebookTracker,
+  INotebookWidgetFactory,
+  NotebookPanel,
+  NotebookWidgetFactory
+} from '@jupyterlab/notebook';
+import { MySTContentFactory } from './MySTContentFactory';
 
-import {ISessionContextDialogs} from '@jupyterlab/apputils';
-import {IRenderMimeRegistry} from '@jupyterlab/rendermime';
+import { ISessionContextDialogs } from '@jupyterlab/apputils';
+import { IRenderMimeRegistry } from '@jupyterlab/rendermime';
 
-import {ITranslator} from '@jupyterlab/translation';
-import {LabIcon} from '@jupyterlab/ui-components';
+import { ITranslator } from '@jupyterlab/translation';
+import { LabIcon } from '@jupyterlab/ui-components';
 
 import mystIconSvg from '../style/mystlogo.svg';
 
@@ -61,7 +69,9 @@ const legacyPlugin: JupyterFrontEndPlugin<void> = {
     if (existingContentFactory instanceof MySTContentFactory) {
       return;
     }
-    console.log('JupyterLab extension jupyterlab-mystjs (legacy mode) is activated!');
+    console.log(
+      'JupyterLab extension jupyterlab-mystjs (legacy mode) is activated!'
+    );
 
     const contentFactory = new MySTContentFactory();
 
